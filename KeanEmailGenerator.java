@@ -4,24 +4,30 @@ import java.util.Scanner;
 
 public class KeanEmailGenerator {
 
-    // Data storage for existing emails
+    // We need to store the emails so we can check them.
     private static HashSet<String> existingEmails = new HashSet<>();
     private static Random rand = new Random();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter your first name: ");
-        String firstName = scanner.nextLine();
+        // Loop to get details for 5 users
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Enter your first name: ");
+            String firstName = scanner.nextLine();
 
-        System.out.print("Enter your last name: ");
-        String lastName = scanner.nextLine();
+            System.out.print("Enter your last name: ");
+            String lastName = scanner.nextLine();
 
-        String email = generateEmail(firstName, lastName);
-        int password = generatePassword();
+            String email = generateEmail(firstName, lastName);
+            int password = generatePassword();
 
-        System.out.println("Generated Email: " + email);
-        System.out.println("Generated Password: " + password);
+            // Display the table header
+            System.out.println("\n"+ "Full Name            Kean email            Password");
+            
+            // Display the results in the desired format
+            System.out.printf("%-20s %-20s  %-20d\n", firstName + " " + lastName, email, password);
+        }
 
         scanner.close();
     }
@@ -51,4 +57,3 @@ public class KeanEmailGenerator {
         return rand.nextInt(900000) + 100000; // Generate a random 6-digit number
     }
 }
-
