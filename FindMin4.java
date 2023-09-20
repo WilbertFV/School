@@ -21,19 +21,18 @@ public class FindMin4 {
         System.out.println("Enter an integer for B: ");
         int b = input.nextInt();
 
-        // Closer scanner (good practice)
-        input.close();
-
         // Print the minimum of a and b with method
-        System.out.printf("The minimum of %4d and %4d is %5d\n", a, b, min(a, b));
+        printMin(a, b);
     }
 
-    // Write method for finding min between a & b
-    public static int min(int a, int b) {
+    // Write void method for finding min between a & b and print it
+    public static void printMin(int a, int b) {
+        int result;
         if (a < b) {
-            return a;
+            result = a;
         } else {
-            return b;
+            result = b;
         }
+        System.out.printf("The minimum of %4d and %4d is %5d\n", a, b, result);
     }
 }
