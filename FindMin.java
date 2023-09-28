@@ -11,7 +11,7 @@ public class FindMin {
   
 public static void main (String[] args){
 
-    // We have 2 numbers an we are going to use Math.min() to find the minmum number
+    // We have 2 numbers an we are going to use Math.min() to find the minimum number
     int a,b;
     a=2;
     b=5;

@@ -28,6 +28,7 @@ public class FindMin4 {
     // Write void method for finding min between a & b and print it
     public static void printMin(int a, int b) {
         int result;
+        
         if (a < b) {
             result = a;
         } else {
