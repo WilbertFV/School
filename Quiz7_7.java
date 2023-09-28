@@ -7,9 +7,9 @@ public class Quiz7_7 {
    * the sum of the array [3, 5, 7, 9, 11]?
    */
 
-   // =======================================================================
+  // =======================================================================
 
-   // Method to add the sum of a 1d array
+  // Method to add the sum of a 1d array
   public static void sumArray(int[] arr) {
     int sum = 0;
 
@@ -19,11 +19,11 @@ public class Quiz7_7 {
     System.out.println("The sum is: " + sum);
   }
 
-   // =======================================================================
+  // =======================================================================
 
-  public static void main (String[] args){
+  public static void main(String[] args) {
 
-    int[] arr = {3,5,7,9,11};
+    int[] arr = { 3, 5, 7, 9, 11 };
     sumArray(arr);
 
   }

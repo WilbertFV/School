@@ -16,7 +16,7 @@ public class Quiz1_7 {
 
     calculateSum(a, b);
   }
-
+  
   public static void calculateSum(int a, int b) {
 
     int sum = a + b;

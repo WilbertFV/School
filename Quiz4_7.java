@@ -1,5 +1,5 @@
 public class Quiz4_7 {
-
+  
   /*
    * Return Value in Method:
    * Create a method named findAverage that takes an array of integers and returns
