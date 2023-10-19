@@ -10,64 +10,63 @@ public class Unit5Task2_House {
      * characteristics and how it functions. Apply setters and getters
      *************************************************************************/
 
+    // Instance variables representing the properties of a house
     private int numberOfBedrooms;
     private double totalSquareFeet;
     private boolean hasGarage;
 
-    // Constructor
+    // Default constructor
+    public Unit5Task2_House() {
+        this.numberOfBedrooms = 0;
+        this.totalSquareFeet = 0.0;
+        this.hasGarage = false;
+    }
+
+    // Parameterized constructor
     public Unit5Task2_House(int numberOfBedrooms, double totalSquareFeet, boolean hasGarage) {
         this.numberOfBedrooms = numberOfBedrooms;
         this.totalSquareFeet = totalSquareFeet;
         this.hasGarage = hasGarage;
     }
 
-    // Getter and Setter methods
+    // Getter methods
     public int getNumberOfBedrooms() {
         return numberOfBedrooms;
-    }
-
-    public void setNumberOfBedrooms(int numberOfBedrooms) {
-        this.numberOfBedrooms = numberOfBedrooms;
     }
 
     public double getTotalSquareFeet() {
         return totalSquareFeet;
     }
 
-    public void setTotalSquareFeet(double totalSquareFeet) {
-        this.totalSquareFeet = totalSquareFeet;
-    }
-
     public boolean isHasGarage() {
         return hasGarage;
+    }
+
+    // Setter methods
+    public void setNumberOfBedrooms(int numberOfBedrooms) {
+        this.numberOfBedrooms = numberOfBedrooms;
+    }
+
+    public void setTotalSquareFeet(double totalSquareFeet) {
+        this.totalSquareFeet = totalSquareFeet;
     }
 
     public void setHasGarage(boolean hasGarage) {
         this.hasGarage = hasGarage;
     }
 
-    // Custom methods
+    // Custom method to simulate opening the door of the house
     public void openDoor() {
         System.out.println("The door of the house is now open.");
     }
 
+    // Custom method to simulate turning on the lights in the house
     public void turnOnLights() {
         System.out.println("The lights in the house are turned on.");
     }
 
-    // Extra credit method
-    public void describeHouse() {
-        System.out.println("This house has " + numberOfBedrooms + " bedrooms and covers an area of " + totalSquareFeet
-                + " square feet.");
-        if (hasGarage) {
-            System.out.println("Additionally, this house has a garage.");
-        } else {
-            System.out.println("Unfortunately, this house doesn't have a garage.");
-        }
-    }
-
     public static void main(String[] args) {
-
+        // Creating a new Unit5Task2_House object using the parameterized constructor
         Unit5Task2_House myHouse = new Unit5Task2_House(3, 2000.0, true);
 
         // Using setter methods to update some properties
@@ -77,14 +76,5 @@ public class Unit5Task2_House {
         // Using custom methods to perform actions
         myHouse.openDoor();
         myHouse.turnOnLights();
-
-        // Using the extra credit method to describe the house
-        myHouse.describeHouse();
-
-        // Creating another object of the Unit5Task2_House class
-        Unit5Task2_House neighborHouse = new Unit5Task2_House(2, 1500.0, false);
-
-        // Using the extra credit method
-        neighborHouse.describeHouse();
     }
 }
