@@ -4,14 +4,14 @@ import java.util.Scanner;
 public class MidtermReview_FindAvg {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         // Asking the user for the number of rows and columns
         System.out.print("Enter the number of rows: ");
-        int rows = scanner.nextInt();
+        int rows = input.nextInt();
 
         System.out.print("Enter the number of columns: ");
-        int columns = scanner.nextInt();
+        int columns = input.nextInt();
 
         // Getting the 2D array
         int[][] array = getArray(rows, columns);
@@ -22,7 +22,7 @@ public class MidtermReview_FindAvg {
         // Printing the average
         printAverage(array);
 
-        scanner.close();
+        input.close();
     }
 
     public static int[][] getArray(int rows, int columns) {
