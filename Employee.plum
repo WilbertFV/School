@@ -1,0 +1,31 @@
+@startuml Employee
+
+class Employee {
+  - id: int
+  - firstName: String
+  - lastName: String
+  - department: String
+  - startDate: LocalDate
+  - salary: double
+  - employmentType: String
+  
+  + Employee(id: int, firstName: String, lastName: String, department: String, startDate: LocalDate, salary: double, employmentType: String)
+  + getId(): int
+  + setId(id: int): void
+  + getFirstName(): String
+  + setFirstName(firstName: String): void
+  + getLastName(): String
+  + setLastName(lastName: String): void
+  + getDepartment(): String
+  + setDepartment(department: String): void
+  + getStartDate(): LocalDate
+  + setStartDate(startDate: LocalDate): void
+  + getSalary(): double
+  + setSalary(salary: double): void
+  + getEmploymentType(): String
+  + setEmploymentType(employmentType: String): void
+  + toString(): String
+  + toFormattedString(): String
+}
+
+@enduml

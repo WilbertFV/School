@@ -1,0 +1,15 @@
+@startuml villalow_HRTest
+
+class villalow_HRTest {
+  - employees: List<Employee>
+
+  + main(args: String[]): void
+  + readEmployeeData(fileName: String): void
+  + sortEmployees(): void
+  + printReport(): void
+}
+
+villalow_HRTest --|> ArrayList
+villalow_HRTest --|> Comparator
+
+@enduml
