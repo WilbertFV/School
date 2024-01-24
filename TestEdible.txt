@@ -1,0 +1,39 @@
+public class TestEdible {
+
+  /*******************************************************************************
+   * Kean University
+   * Semester (Spring 2024)
+   * Course: CPS*2232*02 - Data Structures
+   * Author(s): Wilbert Villalobos
+   *************************************************************************/
+
+  public static void main(String[] args) {
+
+    Sushi sushi1 = new Sushi("Tuna");
+    Sushi sushi2 = new Sushi("Eel");
+
+    Soup soup1 = new Soup(true);
+    Soup soup2 = new Soup(false);
+
+    Edible[] edibles = new Edible[4];
+    edibles[0] = sushi1;
+    edibles[1] = sushi2;
+    edibles[2] = soup1;
+    edibles[3] = soup2;
+
+    System.out
+        .println("+----------------+----------------------------------+-------------------------------------------+");
+    System.out
+        .println("|     Class      |          Description             |                How To Eat                 |");
+    System.out
+        .println("+----------------+----------------------------------+-------------------------------------------+");
+    for (Edible edible : edibles) {
+      System.out.format("| %-14s | %-32s | %-40s |\n",
+          edible.getClass().getSimpleName(),
+          edible.toString(),
+          edible.howToEat());
+    }
+    System.out
+        .println("+----------------+----------------------------------+-------------------------------------------+");
+  }
+}

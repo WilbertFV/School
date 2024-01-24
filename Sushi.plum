@@ -1,0 +1,17 @@
+@startuml
+interface Edible {
+  {abstract} +String howToEat()
+}
+
+class Sushi implements Edible {
+  -String fishType
+
+  +Sushi(String fishType)
+  +Sushi()
+  +getFishType() : String
+  +setFishType(String fishType) : void
+  +howToEat() : String
+  +favoriteFish() : String
+  +toString() : String
+}
+@enduml

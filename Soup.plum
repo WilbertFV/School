@@ -1,0 +1,17 @@
+@startuml
+interface Edible {
+  {abstract} +String howToEat()
+}
+
+class Soup implements Edible {
+  -boolean isVegetarian
+
+  +Soup(boolean isVegetarian)
+  +Soup()
+  +isVegetarian() : boolean
+  +setVegetarian(boolean isVegetarian) : void
+  +howToEat() : String
+  +dietaryPreference() : String
+  +toString() : String
+}
+@enduml

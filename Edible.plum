@@ -1,0 +1,6 @@
+@startuml
+interface Edible {
+  {abstract} +String howToEat()
+  +String howToCook()
+}
+@enduml
