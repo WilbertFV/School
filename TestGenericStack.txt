@@ -1,0 +1,70 @@
+import java.util.Date;
+
+public class TestGenericStack {
+    public static void main(String[] args) {
+
+    	//Strings
+        GenericStack<String> stringStack = new GenericStack<>();
+        stringStack.push("Cat");
+        stringStack.push("Word");
+        stringStack.push("Programming");
+
+        //Dates
+        GenericStack<Date> dateStack = new GenericStack<>();
+        dateStack.push(new Date());  // Current date
+        dateStack.push(new Date(System.currentTimeMillis() - 100 * 1000));  // seconds
+        dateStack.push(new Date(System.currentTimeMillis() + 100 * 1000));  // seconds
+
+        //Doubles
+        GenericStack<Double> doubleStack = new GenericStack<>();
+        doubleStack.push(1.1);
+        doubleStack.push(2.2);
+        doubleStack.push(3.3);
+
+        // Remove
+        stringStack.pop();
+        dateStack.pop();
+        doubleStack.pop();
+
+        // Print elements left in each stack
+        System.out.println("Remaining elements in String stack:");
+        stringStack.list.forEach(System.out::println);
+
+        System.out.println("\nRemaining elements in Date stack:");
+        dateStack.list.forEach(System.out::println);
+
+        System.out.println("\nRemaining elements in Double stack:");
+        doubleStack.list.forEach(System.out::println);
+    }
+}
+
+class GenericStack<E> {
+    java.util.ArrayList<E> list = new java.util.ArrayList<>();
+
+    public int getSize() {
+        return list.size();
+    }
+
+    public E peek() {
+        return list.get(getSize() - 1);
+    }
+
+    public void push(E o) {
+        list.add(o);
+    }
+
+    public E pop() {
+        E o = list.get(getSize() - 1);
+        list.remove(getSize() - 1);
+        return o;
+    }
+
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+  
+    @Override
+    public String toString() {
+        return "stack: " + list.toString();
+    }
+}

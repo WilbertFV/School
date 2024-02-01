@@ -1,0 +1,28 @@
+public class RecursiveLinearSearch {
+  public static int recursiveLinearSearch(int[] list, int key, int index) {
+      if (index >= list.length) {
+          return -1; // End of the array, key not found
+      } else if (list[index] == key) {
+          return index; // Key found, return its index
+      } else {
+          return recursiveLinearSearch(list, key, index + 1); // Continue to the next index
+      }
+  }
+
+  public static void main(String[] args) {
+      final int N = 100; // Example array size
+      int[] list = new int[N];
+      for (int i = 0; i < N; i++) {
+          list[i] = i; // Populate the array
+      }
+      final int KEY = 50; // Example key to find
+
+      // Run the recursive linear search and measure its time
+      long begin = System.nanoTime();
+      int indexFound = recursiveLinearSearch(list, KEY, 0);
+      long end = System.nanoTime();
+
+      System.out.println("Key " + KEY + " found at index: " + indexFound);
+      System.out.println("Recursive search time: " + (end - begin) + " nanoseconds.");
+  }
+}

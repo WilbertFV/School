@@ -1,0 +1,21 @@
+public class LinearSearchBestCase {
+    public static int linearSearch(int[] list, int key) {
+        for (int i = 0; i < list.length; i++) {
+            if (key == list[i])
+                return i;
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        final int N = 100; // Try different values like 10, 100, 1000
+        int[] list = new int[N];
+        final int KEY = 0; // Key is at the first position
+
+        long begin = System.nanoTime();
+        linearSearch(list, KEY);
+        long end = System.nanoTime();
+
+        System.out.println("Best case time for N = " + N + ": " + (end - begin) + " nanoseconds.");
+    }
+}
