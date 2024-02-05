@@ -1,0 +1,31 @@
+@startuml
+interface Commandable<T> {
+    +setCommand(commandType: String, commandValue: T): void
+    +getCommandValue(): T
+    +executeCommand(): void
+}
+
+class WilbertRobot<T> implements Commandable<T> {
+    -robotId: int
+    -robotType: String
+    -commandType: String
+    -commandValue: T
+
+    +WilbertRobot()
+    +WilbertRobot(robotId: int, robotType: String)
+    +getRobotId(): int
+    +setRobotId(robotId: int): void
+    +getRobotType(): String
+    +setRobotType(robotType: String): void
+    +getCommandType(): String
+    +setCommandType(commandType: String): void
+    +setCommand(commandType: String, commandValue: T): void
+    +getCommandValue(): T
+    +executeCommand(): void
+    +toString(): String
+    +executeCommands(robots: List<WilbertRobot<?>>): void
+    +main(args: String[]): void
+}
+
+WilbertRobot ..|> Commandable : implements
+@enduml
