@@ -23,6 +23,8 @@ public class FindMin4 {
 
         // Print the minimum of a and b with method
         printMin(a, b);
+
+        input.close(); // Close the Scanner object
     }
 
     // Write void method for finding min between a & b and print it

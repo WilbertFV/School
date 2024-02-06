@@ -16,6 +16,8 @@ public class TowerOfHanoi {
 
         System.out.println("Number of moves: " + moveCount);
         System.out.println("Time taken (nanoseconds): " + (endTime - startTime));
+
+        input.close(); // Close the Scanner
     }
 
     public static void moveDisks(int n, char fromTower, char toTower, char auxTower) {

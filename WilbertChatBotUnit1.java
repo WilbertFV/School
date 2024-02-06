@@ -42,6 +42,8 @@ public class WilbertChatBotUnit1 {
     Scanner input = new Scanner(System.in);
     String tone = "none";
     boolean exit = false;
+    // Close the Scanner object
+    input.close();
 
     // Keeps going until exit
     // Display Menu
