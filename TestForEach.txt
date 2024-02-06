@@ -1,0 +1,43 @@
+/*******************************************************************************
+ * Kean Univesity-
+ * Semester (Spring 2024)
+ * Course: CPS*2232*01 - Data Structures
+ * Author(s): Wilbert Villalobos CPS2232*01
+ * Assignment- Lab 3
+ *************************************************************************/
+
+ import java.util.ArrayList;
+import java.util.Collection;
+
+public class TestForEach {
+    public static void main(String[] args) {
+
+        Collection<String> collection = new ArrayList<>();
+        collection.add("New York");
+        collection.add("Atlanta");
+        collection.add("Dallas");
+        collection.add("Madison");
+
+        System.out.println("City names in uppercase:");
+        collection.forEach(e -> System.out.print(e.toUpperCase() + " "));
+        
+        Collection<Integer> collection2 = new ArrayList<>();
+  
+        int[] keanID = {1, 2, 2, 8, 0, 6, 8};
+        for (int id : keanID) {
+            collection2.add(id);
+        }
+
+        // Task 3.2: Print each number times 2
+        System.out.println("\n\nEach Kean ID digit times 2:");
+        collection2.forEach(e -> System.out.print(e * 2 + " "));
+
+        // Task 3.3: Print the square of each number
+        System.out.println("\nSquare of each Kean ID digit:");
+        collection2.forEach(e -> System.out.print((e * e) + " "));
+
+        // Task 3.4: Print the logarithm (base 10) of each number
+        System.out.println("\nLogarithm (base 10) of each Kean ID digit:");
+        collection2.forEach(e -> System.out.print((e == 0 ? "undefined " : Math.log10(e) + " ")));
+    }
+}

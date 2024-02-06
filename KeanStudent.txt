@@ -1,0 +1,60 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+class KeanStudent {
+    int keanID;
+    String firstName;
+    String lastName;
+
+    public KeanStudent(int keanID, String firstName, String lastName) {
+        this.keanID = keanID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+ 
+    @Override
+    public String toString() {
+        return "KeanStudent [keanID=" + keanID + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+    }
+}
+
+// IDComparator class
+class IDComparator implements Comparator<KeanStudent> {
+    public int compare(KeanStudent x, KeanStudent y) {
+        return x.keanID - y.keanID;
+    }
+}
+
+// NameComparator class
+class NameComparator implements Comparator<KeanStudent> {
+    public int compare(KeanStudent x, KeanStudent y) {
+        int firstNameComparison = x.firstName.compareTo(y.firstName);
+        if (firstNameComparison != 0) {
+            return firstNameComparison;
+        } else {
+            return x.lastName.compareTo(y.lastName);
+        }
+    }
+}
+ 
+class TestComparator {
+    public static void main(String[] args) {
+        ArrayList<KeanStudent> list = new ArrayList<>();
+        list.add(new KeanStudent(111, "Paddy", "Considine"));
+        list.add(new KeanStudent(221, "Emma", "D'Arcy"));
+        list.add(new KeanStudent(110, "Matt", "Smith"));
+        list.add(new KeanStudent(99, "Steve", "Toussaint"));
+
+        System.out.println("Initially: ");
+        list.forEach(System.out::println);
+
+        Collections.sort(list, new IDComparator());
+        System.out.println("\nSorted by Kean ID");
+        list.forEach(System.out::println);
+
+        Collections.sort(list, new NameComparator());
+        System.out.println("\nSorted by first name, then by last name");
+        list.forEach(System.out::println);
+    }
+}

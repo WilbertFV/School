@@ -1,0 +1,47 @@
+/*******************************************************************************
+ * Kean Univesity-
+ * Semester (Spring 2024)
+ * Course: CPS*2232*01 - Data Structures
+ * Author(s): Wilbert Villalobos CPS2232*01
+ * Assignment- Lab 3
+ *************************************************************************/
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class TestQueue {
+    public static void main(String[] args) {
+        Queue<String> queueString = new LinkedList<>();
+        queueString.offer("Oklahoma");
+        queueString.offer("Indiana");
+        queueString.offer("Georgia");
+        queueString.offer("Texas");
+
+        System.out.println("Queue of Strings:");
+        while (queueString.size() > 0) {
+            System.out.print(queueString.remove() + " ");
+        }
+
+        System.out.println("\n\nTesting Queue with Integers:");
+        Queue<Integer> queueInteger = new LinkedList<>();
+
+        queueInteger.add(10);
+        queueInteger.add(20);
+
+        queueInteger.offer(30);
+        queueInteger.offer(40);
+
+        System.out.println("Element at head (using element()): " + queueInteger.element());
+
+        System.out.println("Element at head (using peek()): " + queueInteger.peek());
+
+        System.out.println("Removed element (using poll()): " + queueInteger.poll());
+
+        System.out.println("Removed element (using remove()): " + queueInteger.remove());
+
+        System.out.println("Remaining Queue:");
+        while (!queueInteger.isEmpty()) {
+            System.out.print(queueInteger.poll() + " ");
+        }
+    }
+}

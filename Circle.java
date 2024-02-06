@@ -1,16 +1,46 @@
-import java.util.Scanner;
+public class Circle extends GeometricObject {
+  private double radius;
 
-public class Circle {
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    System.out.print("Enter the radius of the circle: ");
-    double radius = scanner.nextDouble();
+  public Circle() {
+  }
 
-    if (radius < 0) {
-      System.out.println("The radius cannot be negative.");
-    } else {
-      double area = Math.PI * Math.pow(radius, 2);
-      System.out.printf("The area of the circle with radius %.2f is: %.2f\n", radius, area);
-    }
+  public Circle(double radius) {
+    this.radius = radius;
+  }
+
+  /** Return radius */
+  public double getRadius() {
+    return radius;
+  }
+
+  /** Set a new radius */
+  public void setRadius(double radius) {
+    this.radius = radius;
+  }
+
+  @Override /** Return area */
+  public double getArea() {
+    return radius * radius * Math.PI;
+  }
+
+  /** Return diameter */
+  public double getDiameter() {
+    return 2 * radius;
+  }
+
+  @Override /** Return perimeter */
+  public double getPerimeter() {
+    return 2 * radius * Math.PI;
+  }
+
+  /* Print the circle info */
+  public void printCircle() {
+    System.out.println("The circle is created " + getDateCreated() +
+      " and the radius is " + radius);
+  }
+
+  @Override /** Return a string representation of a Circle object */
+  public String toString() {
+    return super.toString() + " radius: " + radius;
   }
 }

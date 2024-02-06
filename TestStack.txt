@@ -1,0 +1,41 @@
+/*******************************************************************************
+ * Kean Univesity-
+ * Semester (Spring 2024)
+ * Course: CPS*2232*01 - Data Structures
+ * Author(s): Wilbert Villalobos CPS2232*01
+ * Assignment- Lab 3
+ *************************************************************************/
+
+import java.util.Stack;
+
+public class TestStack {
+    public static void main(String[] args) {
+
+        Stack<Integer> integerStack = new Stack<>();
+        // Test push method
+        integerStack.push(10);
+        integerStack.push(20);
+        integerStack.push(30);
+
+        Stack<String> stringStack = new Stack<>();
+        stringStack.push("Hello");
+        stringStack.push("World");
+        stringStack.push("Java");
+
+        // Test Integer Stack
+        System.out.println("Integer Stack Operations:");
+        System.out.println("Is the integer stack empty? " + integerStack.empty());
+        System.out.println("Top element (peek): " + integerStack.peek());
+        System.out.println("Position of element '20' (search): " + integerStack.search(20));
+        System.out.println("Remove top element (pop): " + integerStack.pop());
+        System.out.println("Top element after pop (peek): " + integerStack.peek());
+
+        // Test String Stack
+        System.out.println("\nString Stack Operations:");
+        System.out.println("Is the string stack empty? " + stringStack.empty());
+        System.out.println("Top element (peek): " + stringStack.peek());
+        System.out.println("Position of element 'World' (search): " + stringStack.search("World"));
+        System.out.println("Remove top element (pop): " + stringStack.pop());
+        System.out.println("Top element after pop (peek): " + stringStack.peek());
+    }
+}

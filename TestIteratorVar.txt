@@ -1,0 +1,27 @@
+/*******************************************************************************
+ * Kean Univesity-
+ * Semester (Spring 2024)
+ * Course: CPS*2232*01 - Data Structures
+ * Author(s): Wilbert Villalobos CPS2232*01
+ * Assignment- Lab 3
+ *************************************************************************/
+
+import java.util.Collection;
+import java.util.LinkedList;
+
+public class TestIteratorVar {
+    public static void main(String[] args) {
+        Collection<String> collection = new LinkedList<>();
+        collection.add("New York");
+        collection.add("Atlanta");
+        collection.add("Dallas");
+        collection.add("Madison");
+
+        var iterator = collection.iterator();
+        while (iterator.hasNext()) {
+            String city = iterator.next();
+            System.out.print(city + " ");
+        }
+        System.out.println();
+    }
+}
