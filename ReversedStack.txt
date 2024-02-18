@@ -1,3 +1,10 @@
+/*******************************************************************************
+ * Kean University- Spring 2024
+ * Course: CPS*2232*02 - Data Structures
+ * Author(s): Wilbert Villalobos
+ * Lab 4
+ *************************************************************************/
+
 import java.util.Stack;
 
 public class ReversedStack {

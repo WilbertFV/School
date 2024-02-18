@@ -1,10 +1,10 @@
 /*******************************************************************************
  * Kean University- Spring 2024
- * Semester ()
- * Course: CPS*2232*01 - Data Structures
- * Author(s): Wilbert Villalobos CPS2231*07
+ * Course: CPS*2232*02 - Data Structures
+ * Author(s): Wilbert Villalobos
  * Lab 4
  *************************************************************************/
+
 public class MyLinkedList<E> implements MyList<E> {
   protected Node<E> head, tail;
   protected int size = 0; // Number of elements in the list
