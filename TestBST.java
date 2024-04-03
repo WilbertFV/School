@@ -1,0 +1,48 @@
+public class TestBST {
+  public static void main(String[] args) {
+      BST<Integer> smallestHeightBST = new BST<>();
+      int[] balancedOrder = {2, 0, 1, 6, 8};
+      for (int value : balancedOrder) {
+          smallestHeightBST.insert(value);
+      }
+
+      BST<Integer> largestHeightBST = new BST<>();
+      int[] skewedOrder = {8, 6, 2, 1, 0}; // Reverse-sorted order for demonstration
+      for (int value : skewedOrder) {
+          largestHeightBST.insert(value);
+      }
+
+      // Measure insert runtime
+      long startTime = System.nanoTime();
+      smallestHeightBST.insert(3);
+      long endTime = System.nanoTime();
+      System.out.println("Insert runtime for smallest height BST: " + (endTime - startTime) + " ns");
+
+      startTime = System.nanoTime();
+      largestHeightBST.insert(3);
+      endTime = System.nanoTime();
+      System.out.println("Insert runtime for largest height BST: " + (endTime - startTime) + " ns");
+
+      // Measure search runtime
+      startTime = System.nanoTime();
+      smallestHeightBST.search(6);
+      endTime = System.nanoTime();
+      System.out.println("Search runtime for smallest height BST: " + (endTime - startTime) + " ns");
+
+      startTime = System.nanoTime();
+      largestHeightBST.search(6);
+      endTime = System.nanoTime();
+      System.out.println("Search runtime for largest height BST: " + (endTime - startTime) + " ns");
+
+      // Measure remove runtime
+      startTime = System.nanoTime();
+      smallestHeightBST.delete(6);
+      endTime = System.nanoTime();
+      System.out.println("Remove runtime for smallest height BST: " + (endTime - startTime) + " ns");
+
+      startTime = System.nanoTime();
+      largestHeightBST.delete(6);
+      endTime = System.nanoTime();
+      System.out.println("Remove runtime for largest height BST: " + (endTime - startTime) + " ns");
+  }
+}
