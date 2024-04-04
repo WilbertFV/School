@@ -3,7 +3,7 @@
  * Kean University- Semester (Spring 2024)
  * Course: CPS*2232*02 - Data Structures
  * Author(s): Wilbert Villalobos CPS2232*02
- * Assignment- HW 6
+ * Assignment- Lab 6
  *************************************************************************/
 
 import java.util.Iterator;
