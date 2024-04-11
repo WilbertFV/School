@@ -14,7 +14,6 @@ public class TestPreOrderBST {
         bst.inorder();
         System.out.println("\n");
 
-        // Use the PreorderIterator to display elements in preorder
         System.out.println("BST in preorder using PreorderIterator:");
         for (Integer element : bst) {
             System.out.print(element + " ");
