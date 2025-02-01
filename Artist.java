@@ -17,7 +17,7 @@ class Square extends Artist {
 
     @Override
     public void draw() {
-        System.out.println("This is the implementation of the Square");
+        System.out.println("The artist drew 4 equal sides at 90 degrees");
     }
 }
 
@@ -25,7 +25,7 @@ class Circle extends Artist {
 
     @Override
     public void draw() {
-        System.out.println("This is the implementation of the Circle");
+        System.out.println("The artist drew a 360 degrees perfect circle");
     }
 }
 
@@ -33,6 +33,6 @@ class Triangle extends Artist {
 
     @Override
     public void draw() {
-        System.out.println("This is the implementation of the Triangle");
+        System.out.println("The artist drew 3 sides with 180 degrees");
     }
 }
