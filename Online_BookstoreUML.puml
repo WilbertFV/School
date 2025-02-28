@@ -1,0 +1,73 @@
+@startuml Online_BookstoreUML
+skinparam BackgroundColor white
+skinparam RectangleBackgroundColor lightgray
+skinparam UseCaseBackgroundColor #A0E99B
+skinparam UseCaseBorderColor black
+skinparam ActorBackgroundColor #66B2FF
+skinparam ActorBorderColor black
+skinparam RectangleBorderColor black
+skinparam dpi 150
+skinparam Shadowing false
+
+title **Online Bookstore Use Case Diagram**
+
+rectangle "Online Bookstore System" {
+
+    actor "Customer" as Customer #66B2FF
+    actor "Guest User" as GuestUser #66B2FF
+    actor "Admin" as Admin #66B2FF
+    actor "Staff" as Staff #66B2FF
+    actor "Payment Gateway" as PaymentGateway #66B2FF
+    actor "Shipping Provider" as ShippingProvider #66B2FF
+    actor "Publisher" as Publisher #66B2FF
+    actor "Chatbot" as Chatbot #66B2FF
+
+    usecase "Browsing Books" as UC1
+    usecase "Viewing Book Details & Reviews" as UC2
+    usecase "Adding Books to Cart/Wishlist" as UC3
+    usecase "Making a Purchase" as UC4
+    usecase "Providing Payment Information" as UC5
+    usecase "Processing Payment" as UC6
+    usecase "Order Confirmation & Tracking" as UC7
+    usecase "Downloading E-Books" as UC8
+    usecase "Managing Inventory" as UC9
+    usecase "Updating Catalog & Pricing" as UC10
+    usecase "Customer Support (Chatbot & Live)" as UC11
+    usecase "Handling Promotions & Discounts" as UC12
+
+    UC1 .> UC2 : "<<extend>>"
+    UC2 .> UC3 : "<<extend>>"
+    UC4 -> UC5 : "<<include>>"
+    UC5 -> UC6 : "<<include>>"
+    UC6 -> PaymentGateway : "<<include>>"
+    UC6 -> UC7 : "<<include>>"
+    UC7 -> ShippingProvider : "<<include>>"
+    UC8 -> Customer : "<<include>>"
+    UC4 .> UC11 : "<<extend>>"
+
+    Customer -- UC1
+    Customer -- UC2
+    Customer -- UC3
+    Customer -- UC4
+    Customer -- UC7
+    Customer -- UC8
+    Customer -- UC11
+
+    GuestUser -- UC1
+    GuestUser -- UC2
+
+    Admin -- UC9
+    Admin -- UC10
+    Admin -- UC12
+
+    Staff -- UC11
+    Staff -- UC9
+    Staff -- UC10
+
+    PaymentGateway -- UC6
+    ShippingProvider -- UC7
+    Publisher -- UC10
+    Chatbot -- UC11
+}
+
+@enduml

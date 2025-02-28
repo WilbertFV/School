@@ -1,0 +1,41 @@
+@startumli name
+left to right direction
+
+actor Customer
+actor Cashier
+actor Manager
+actor Supplier
+
+rectangle "Supermarket System" {
+    
+    ' Customer Actions
+    Customer --> (Browse Products)
+    Customer --> (Add to Cart)
+    Customer --> (Checkout)
+    Customer --> (Make Payment)
+
+    ' Cashier Actions
+    Cashier --> (Process Payment)
+    Cashier --> (Manage Inventory)
+
+    ' Manager Actions
+    Manager --> (Generate Sales Report)
+    Manager --> (Manage Inventory)
+
+    ' Supplier Actions
+    Supplier --> (Restock Products)
+
+    ' Includes: Always Happens
+    (Checkout) --> (Make Payment) : <<include>>
+    (Make Payment) --> (Process Payment) : <<include>>
+
+    ' Extensions: Optional Features
+    (Checkout) .> (Apply Discount) : <<extend>>
+    (Make Payment) .> (Use Loyalty Points) : <<extend>>
+    (Make Payment) .> (Print Receipt) : <<extend>>
+
+    ' Inventory Management
+    (Manage Inventory) <-- (Restock Products) : <<include>>
+}
+
+@enduml
