@@ -1,4 +1,4 @@
-// test #2
+// test #3
 
 public class Array {
   public static void main(String[] args) {
